@@ -1,0 +1,4 @@
+
+grid = input()
+
+print grid
