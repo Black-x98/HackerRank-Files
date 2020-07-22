@@ -1,3 +1,4 @@
-T = []
-print(T[-1][0])
-print("FFFFFFFFFF")
+import pyttsx3
+
+import subprocess
+subprocess.Popen('explorer "F:\hackerrank"')
