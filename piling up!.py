@@ -11,16 +11,14 @@ def func():
     count = 0
 
     i = 0
-    while l[i] >= l[i+1] and i<len(l):
+    while i<f-1 and l[i] >= l[i+1]:
         count += 1
         i += 1
 
-    i = 1
-    while l[-1-i] <= l[-i] and i<len(l)-1:
+    while i<f-1 and l[i] <= l[i+1]:
         count += 1
         i += 1
 
-    print("\n" + count.__str__())
     if count == f-1:
         print("Yes")
 
