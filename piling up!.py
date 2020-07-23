@@ -1,50 +1,31 @@
 import os
 import sys
-fptr = sys.stdout #open(os.environ['OUTPUT_PATH'], 'w')
+fptr = sys.stdout
 
 def func():
+
     f = int(input())
     
     l= list(map(int, input().split(" ")))
 
-    pick = (2<<31) + 1
+    count = 0
 
-    for i in range(len(l)):
-        b, e = l[0], l[-1] 
-        
-        if b>pick and e>pick:
-            fptr.write("No")
-            break
+    i = 0
+    while l[i] >= l[i+1] and i<len(l):
+        count += 1
+        i += 1
 
-        elif b>e:
-            if b>pick:
-                fptr.write("No")
-                break
-            pick = b
-            #efptr.write(str(l) + "\n")
-            l = l[1:]
-            #efptr.write(str(l) + "\n")
+    i = 1
+    while l[-1-i] <= l[-i] and i<len(l)-1:
+        count += 1
+        i += 1
 
+    print("\n" + count.__str__())
+    if count == f-1:
+        print("Yes")
 
-        elif b<e:
-            if e>pick:
-                fptr.write("No")
-                break
-            pick = e
-            #efptr.write(str(l) + "\n")
-            l = l[:-1]
-            #efptr.write(str(l) + "\n")
-
-
-        elif b==e and e<=pick:
-            pick = e
-            #efptr.write(str(l) + "\n")
-            l = l[:-1]
-            #efptr.write(str(l) + "\n")
-
-        if len(l)<=0:
-            fptr.write("Yes")
-            break
+    else:
+        print("No")
 
 n = int(input())
 for i in range(n):

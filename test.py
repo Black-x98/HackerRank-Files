@@ -1,5 +1,4 @@
-s = 'abdhtoqifl'
+l = ['a','b','c','d','e','f','g','h','t']
 
-print(s)
-s = s[1:]
-print(s)
+for i in range(1,len(l)):
+    print(l[-i])
